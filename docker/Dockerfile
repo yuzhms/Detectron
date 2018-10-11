@@ -28,7 +28,7 @@ RUN make
 RUN make ops
 
 # add ssh
-RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list && \ # 修改为科大源，非必选项
+RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list && \
     apt update && \
-    apt install -y openssh-client openssh-server && \ # 为了使镜像支持ssh，需安装ssh服务
+    apt install -y openssh-client openssh-server && \
     apt clean
